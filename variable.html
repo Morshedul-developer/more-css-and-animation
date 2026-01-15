@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Variable</title>
+    <style>
+      :root {
+        --primary-color: blue;
+        --secondary-color: steelblue;
+        --font-small: 12px;
+      }
+
+      .box {
+        border: 1px solid var(--primary-color);
+      }
+      h1,
+      h5 {
+        color: var(--secondary-color);
+      }
+      .box p{
+        font-size: var(--font-small);
+      }
+
+      /* The use of calc */
+      .box{
+        width: calc(100% - 800px);
+        margin-bottom: 20px;
+      }
+      .container{
+        border: 1px solid rebeccapurple;
+        padding: 20px;
+        text-align: center;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 200px calc(100% - 200px - 20px);
+        grid-template-rows: 300px;
+      }
+      .sidebar{
+        background-color: var(--primary-color);
+      }
+      .main{
+        background-color: var(--secondary-color);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My Custom Properties</h1>
+    <h5>Also commonly known as CSS variables</h5>
+    <div class="box">
+      <h3>I am doing something</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt
+        suscipit magni corrupti eius asperiores ab officia eligendi eos dolorum!
+        Corporis rerum eos quis natus rem laboriosam reprehenderit, nam aliquid
+        perferendis?
+      </p>
+    </div>
+    <div class="container">
+        <div class="sidebar">Sidebar</div>
+        <div class="main">Main bar</div>
+    </div>
+  </body>
+</html>
